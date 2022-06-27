@@ -9,7 +9,6 @@ server.post('/vilao', async (req,resp) => {
     const vilao = req.body;
     if(!vilao.nome) throw new Error ("Nome é Obrigatório")
     if(!vilao.maldade) throw new Error ("Maldade é Obrigatória")
-    if(!vilao.TemPoder) throw new Error ("Informação é Obrigatória")
     const resposta = await NovoVilao(vilao)
     resp.status(200).send(resposta)
     }
